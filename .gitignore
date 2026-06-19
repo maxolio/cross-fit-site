@@ -1,0 +1,7 @@
+node_modules/
+.idea/
+# Repomix outputs
+repomix-output.txt
+repomix-output.xml
+repomix-output.json
+.repomixignore

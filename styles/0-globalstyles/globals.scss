@@ -1,0 +1,19 @@
+body {
+  font-family: var(--font-family-base), sans-serif;
+  color: var(--color-light-gray);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  background-color: var(--color-dark);
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-pading-x) * 2);
+  padding-inline: var(--container-pading-x);
+  margin-inline: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}

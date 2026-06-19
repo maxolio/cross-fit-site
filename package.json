@@ -1,0 +1,16 @@
+{
+  "name": "cross-fit-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@a1rth/css-normalize": "^1.2.4",
+    "sass": "1.101.0"
+  }
+}
