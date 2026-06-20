@@ -1,0 +1,20 @@
+@use "0-globalstyles" as *;
+
+.button {
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px max(1.35vw, 18px);
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+
+  font-size: max(10px, 0.625vw);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  @include hover {
+    background-color: var(--color-light-gray);
+  }
+}

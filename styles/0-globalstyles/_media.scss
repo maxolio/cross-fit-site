@@ -1,0 +1,86 @@
+$desktop-width: 1440px;
+$laptop-width: 1280px;
+$tablet-width: 1024px;
+$mobile-width: 768px;
+$mobile-s-width: 480px;
+
+
+@mixin desktop-above {
+  @media (width > $desktop-width) {
+    @content;
+
+  }
+}
+
+@mixin desktop {
+  @media (width <= $desktop-width) {
+    @content;
+  }
+}
+
+@mixin laptop-above {
+  @media (width > $laptop-width) {
+    @content;
+
+  }
+}
+
+@mixin laptop {
+  @media (width <= $laptop-width) {
+    @content;
+  }
+}
+
+@mixin tablet-above {
+  @media (width > $tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (width <= $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile-above {
+  @media (width > $mobile-width) {
+    @content;
+
+  }
+}
+
+@mixin mobile {
+  @media (width <= $mobile-width) {
+    @content;
+  }
+}
+
+@mixin mobile-s-above {
+  @media (width > $mobile-s-width) {
+    @content;
+
+  }
+}
+
+@mixin mobile-s {
+  @media (width <= $mobile-s-width) {
+    @content;
+  }
+}
+
+@mixin hover ($hasActiveEffectOnMobile: true) {
+    @media (any-hover: hover) {
+      &:hover {
+        @content;
+      }
+    }
+
+  @if ($hasActiveEffectOnMobile) {
+    @media (any-hover: none) {
+      &:active {
+        @content;
+      }
+    }
+  }
+}

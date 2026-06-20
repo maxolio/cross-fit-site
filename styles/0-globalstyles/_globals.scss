@@ -1,3 +1,10 @@
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
 body {
   font-family: var(--font-family-base), sans-serif;
   color: var(--color-light-gray);
@@ -16,4 +23,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   text-transform: uppercase;
+}
+
+a,
+button,
+textarea,
+input,
+svg * {
+  transition-duration: var(--transition-duration);
 }

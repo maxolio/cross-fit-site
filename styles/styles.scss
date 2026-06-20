@@ -1,5 +1,7 @@
-@use "0-globalstyles" as globalstyles;
+@use "0-globalstyles" as *;
 
+@use "button";
+@use "burger-button";
 @use "header";
 
 
