@@ -1,0 +1,5 @@
+@use "maxins" as *;
+
+.visually-hidden {
+  @include visually-hidden;
+}

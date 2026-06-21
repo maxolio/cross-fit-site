@@ -10,6 +10,10 @@
   background-color: transparent;
   border: var(--border);
   border-radius: 50px;
+
+  @include hover {
+
+  }
   
 
   &.is-active .burger-button__line {

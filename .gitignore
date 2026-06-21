@@ -4,4 +4,7 @@ node_modules/
 repomix-output.txt
 repomix-output.xml
 repomix-output.json
+repomix-output.md
+
 .repomixignore
+repomix.config.json
