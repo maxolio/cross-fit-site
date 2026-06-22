@@ -6,7 +6,6 @@
   z-index: 100;
   width: 100%;
 
-
   background-color: var(--color-dark-alt);
 
   &__inner {
@@ -52,6 +51,7 @@
 
       &[open] {
         display: flex;
+
 
         @starting-style {
           opacity: 0;
@@ -124,6 +124,7 @@
 
     @include mobile {
       position: relative;
+      z-index: 101;
     }
   }
 }

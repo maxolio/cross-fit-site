@@ -301,10 +301,11 @@ svg * {
   display: inline-flex;
   align-items: center;
   padding: 7px max(1.35vw, 18px);
+  color: var(--color-dark);
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--color-white);
-  font-size: max(10px, 0.625vw);
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -318,6 +319,46 @@ svg * {
 @media (any-hover: none) {
   .button:active {
     background-color: var(--color-light-gray);
+  }
+}
+.button--transparent {
+  position: relative;
+  height: var(--input-height);
+  padding-left: 31px;
+  padding-right: 80px;
+  background-color: transparent;
+  border: var(--border);
+  color: var(--color-white);
+}
+.button--transparent::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  aspect-ratio: 1;
+  border: var(--border);
+  border-radius: 50%;
+  right: 0;
+  background: url("../icons/button-arrow.svg") center/70% no-repeat;
+  transition-duration: var(--transition-duration);
+}
+@media (any-hover: hover) {
+  .button--transparent:hover {
+    background-color: inherit;
+    color: var(--color-light-gray);
+    border-color: currentColor;
+  }
+  .button--transparent:hover::after {
+    filter: brightness(0.75);
+  }
+}
+@media (any-hover: none) {
+  .button--transparent:active {
+    background-color: inherit;
+    color: var(--color-light-gray);
+    border-color: currentColor;
+  }
+  .button--transparent:active::after {
+    filter: brightness(0.75);
   }
 }
 
@@ -478,6 +519,7 @@ svg * {
 @media (width <= 768px) {
   .header__burger-button {
     position: relative;
+    z-index: 101;
   }
 }
 
@@ -487,7 +529,7 @@ svg * {
 .banner__inner {
   max-width: 1920px;
   margin-inline: auto;
-  min-height: calc(100dvh - 70px);
+  min-height: calc(100svh - 72px);
   padding: 36px 3.64vw;
   display: flex;
   flex-direction: column;
@@ -574,6 +616,96 @@ svg * {
 @media (any-hover: none) {
   .banner__pagination-button:not(.is-current):active::after {
     border-color: var(--color-light-gray);
+  }
+}
+
+.title-medium {
+  color: var(--color-white);
+  font-size: clamp(20px, 2.08vw, 40px);
+  line-height: 1.3;
+}
+
+.backdrop-title {
+  position: relative;
+}
+.backdrop-title::before {
+  content: "";
+  position: absolute;
+  right: calc(100% + 0.2em);
+  width: clamp(16px, 0.65em, 26px);
+  aspect-ratio: 1;
+  background: url("../icons/motivation-plus.svg") center/contain no-repeat;
+}
+.backdrop-title::after {
+  content: attr(data-title);
+  z-index: -1;
+  top: -0.5em;
+  left: -0.6em;
+  font-family: var(--font-family-accent), sans-serif;
+  position: absolute;
+  font-size: 2.8em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-dark-gray);
+  text-stroke: 1px var(--color-dark-gray);
+}
+
+.motivation__item:nth-child(even) {
+  background-color: var(--color-dark-alt);
+}
+.motivation__item:nth-child(even) .motivation__card {
+  flex-direction: row-reverse;
+}
+@media (width <= 768px) {
+  .motivation__item:nth-child(even) .motivation__card {
+    flex-direction: column-reverse;
+  }
+}
+.motivation__card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: min(8.95vw, 210px);
+}
+@media (width <= 768px) {
+  .motivation__card {
+    flex-direction: column-reverse;
+  }
+}
+.motivation__card-body {
+  padding-left: 35px;
+}
+@media (width <= 768px) {
+  .motivation__card-body {
+    margin-bottom: 30px;
+  }
+}
+.motivation__card-title:not(:last-child) {
+  margin-bottom: 14px;
+}
+.motivation__card-description {
+  max-width: 386px;
+}
+.motivation__card-description:not(:last-child) {
+  margin-bottom: 37px;
+}
+.motivation__card-image {
+  margin-block: -60px;
+  border-radius: 10px;
+}
+@media (width <= 1920px) {
+  .motivation__card-image {
+    margin-block: -10px;
+  }
+}
+@media (width <= 1440px) {
+  .motivation__card-image {
+    max-width: 30%;
+  }
+}
+@media (width <= 768px) {
+  .motivation__card-image {
+    margin-block: 40px;
+    max-width: 100%;
   }
 }
 

@@ -1,0 +1,27 @@
+.backdrop-title {
+  position: relative;
+
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: calc(100% + 0.2em);
+    width: clamp(16px, 0.65em, 26px);
+    aspect-ratio: 1;
+    background: url("../icons/motivation-plus.svg") center/contain no-repeat;
+  }
+
+  &::after {
+    content: attr(data-title);
+    z-index: -1;
+    top: -0.5em;
+    left: -0.6em;
+    font-family: var(--font-family-accent), sans-serif;
+    position: absolute;
+    font-size: 2.8em;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-dark-gray);
+    text-stroke: 1px var(--color-dark-gray);
+
+  }
+}

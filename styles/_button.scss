@@ -5,11 +5,13 @@
   display: inline-flex;
   align-items: center;
   padding: 7px max(1.35vw, 18px);
+  color: var(--color-dark);
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--color-white);
 
-  font-size: max(10px, 0.625vw);
+
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -17,5 +19,41 @@
 
   @include hover {
     background-color: var(--color-light-gray);
+  }
+
+  &--transparent {
+    position: relative;
+    height: var(--input-height);
+    padding-left: 31px;
+    padding-right: 80px;
+    background-color: transparent;
+    border: var(--border);
+    color: var(--color-white);
+
+
+
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 100%;
+      aspect-ratio: 1;
+      border: var(--border);
+      border-radius: 50%;
+      right: 0;
+      background: url("../icons/button-arrow.svg") center/70%  no-repeat;
+      transition-duration: var(--transition-duration);
+
+    }
+
+    @include hover {
+      background-color: inherit;
+      color: var(--color-light-gray);
+      border-color: currentColor;
+
+      &::after {
+        filter: brightness(0.75);
+      }
+    }
   }
 }

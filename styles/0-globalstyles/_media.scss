@@ -1,8 +1,22 @@
+$desktop-large-width: 1920px;
 $desktop-width: 1440px;
 $laptop-width: 1280px;
 $tablet-width: 1024px;
 $mobile-width: 768px;
 $mobile-s-width: 480px;
+
+@mixin desktop-large-above {
+  @media (width > $desktop-large-width) {
+    @content;
+
+  }
+}
+
+@mixin desktop-large {
+  @media (width <= $desktop-large-width) {
+    @content;
+  }
+}
 
 
 @mixin desktop-above {

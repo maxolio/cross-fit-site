@@ -1,0 +1,71 @@
+@use "0-globalstyles" as *;
+
+.motivation {
+
+  &__item {
+    &:nth-child(even) {
+      background-color: var(--color-dark-alt);
+
+       .motivation__card {
+        flex-direction: row-reverse;
+
+         @include mobile {
+           flex-direction: column-reverse;
+         }
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: min(8.95vw, 210px);
+
+    @include mobile {
+      flex-direction: column-reverse;
+
+    }
+
+    &-body {
+      padding-left: 35px;
+
+      @include mobile {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-title {
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+    }
+
+    &-description {
+      max-width: 386px;
+
+      &:not(:last-child) {
+        margin-bottom: 37px;
+      }
+    }
+
+    &-image {
+      margin-block: -60px;
+      border-radius: 10px;
+
+
+      @include desktop-large {
+        margin-block: -10px;
+      }
+
+      @include desktop {
+        max-width: 30%;
+      }
+
+      @include mobile {
+        margin-block: 40px;
+        max-width: 100%;
+      }
+    }
+  }
+}
