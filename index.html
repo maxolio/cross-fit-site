@@ -242,8 +242,55 @@
       </li>
     </ul>
   </section>
+  <section class="join-us">
+    <div class="join-us__video-wrapper"
+         data-js-video>
+      <video class="join-us__video"
+             src="./video/join-us-video.mp4"
+             width="960"
+             height="600"
+             poster="./images/join-us-video-img.jpg"
+             data-js-video-player></video>
+      <button class="join-us-video-play-button"
+              type="button"
+              data-js-video-play-button>Play</button>
+    </div>
+    <div class="join-us__body container">
+      <h2 class="join-us__title">JOIN US</h2>
+      <form class="join-us__form">
+        <header class="join-us__form-header">
+          <h3 class="join-us__form-title title-big backdrop-title backdrop-title--center"
+              data-title="GO!">Start here
+          </h3>
+          <div class="join-us__form-subtitle">fill the form below to start your journey</div>
+        </header>
+        <div class="join-us__form-body">
+          <label class="visually-hidden"
+                 for="username">Name</label>
+          <input class="join-us__form-input input"
+                 id="username"
+                 name="username"
+                 placeholder="Name"
+                 autocomplete="name"
+          />
+          <label class="visually-hidden"
+                 for="email">Email</label>
+          <input class="join-us__form-input input"
+                 id="email"
+                 name="email"
+                 placeholder="Email"
+                 type="email"
+                 autocomplete="email"
+          />
+          <button class="join-us__form-button button button--transparent"
+                  type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>
-<footer class="footer">
+<footer class="footer"
+        style="background-color: #643b06;">
   Footer
 </footer>
 

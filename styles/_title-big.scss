@@ -1,0 +1,7 @@
+@use "0-globalstyles" as *;
+
+.title-big{
+  font-size: clamp(20px, 3.12vw, 60px);
+  color: var(--color-white);
+  line-height: 1.2;
+}

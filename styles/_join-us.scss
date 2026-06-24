@@ -1,0 +1,147 @@
+@use "0-globalstyles" as *;
+
+.join-us {
+
+
+  &__video-wrapper {
+    position: relative;
+    padding: 150px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/join-us-video-wrapper-img.jpg") center/cover no-repeat var(--color-dark-alt);
+
+
+    @include mobile {
+      padding: 70px 30px;
+
+    }
+  }
+
+  &__video {
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--color-light-gray);
+  }
+
+  &-video-play-button {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 200px;
+    aspect-ratio: 1;
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: var(--border);
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 20px;
+    transition: opacity var(--transition-duration), visibility var(--transition-duration);
+
+    &::after {
+      content: '';
+      width: 15%;
+      aspect-ratio: 1;
+      background: url("../icons/button-arrow.svg") 100%/contain no-repeat;
+    }
+
+    @include hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    @include mobile {
+      width: 100px;
+      font-size: 14px;
+    }
+
+    &.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+  }
+
+  &__body {
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: clamp(30px, 5.2vw, 100px);
+
+    @include laptop {
+      padding-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: 50px;
+    }
+
+  }
+
+  &__title {
+    margin-top: -0.42em;
+    position: relative;
+    font-size: clamp(55px, 9.37vw, 180px);
+    line-height: 1;
+    color: var(--color-white);
+    text-align: center;
+
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 0.7em;
+      aspect-ratio: 1;
+      margin-left: 0.15em;
+      background: url("../images/join-us-arrow-img.svg") center/cover no-repeat;
+    }
+  }
+
+  &__form {
+    align-self: stretch;
+
+    &-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+
+      @include mobile {
+        row-gap: 10px;
+      }
+    }
+
+    &-subtitle {
+      max-width: 400px;
+      font-size: clamp(14px, 1.04vw, 20px);
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--color-white);
+    }
+
+    &-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 20px;
+      align-self: stretch;
+
+      @include tablet {
+        flex-direction: column;
+        row-gap: 20px;
+      }
+    }
+
+
+  }
+}

@@ -397,6 +397,35 @@ svg * {
   stroke-dasharray: 60 60;
 }
 
+.input {
+  height: var(--input-height);
+  width: 100%;
+  max-width: 400px;
+  padding: 15px 25px;
+  color: var(--color-white);
+  background-color: transparent;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: var(--border-radius);
+}
+.input::placeholder {
+  color: var(--color-light-gray);
+}
+@media (any-hover: hover) {
+  .input:hover {
+    border-color: var(--color-white);
+  }
+}
+@media (any-hover: none) {
+  .input:active {
+    border-color: var(--color-white);
+  }
+}
+.input:focus {
+  outline: none;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -648,6 +677,11 @@ svg * {
   -webkit-text-stroke: 1px var(--color-dark-gray);
   text-stroke: 1px var(--color-dark-gray);
 }
+.backdrop-title--center::after {
+  top: -0.45em;
+  left: 50%;
+  translate: -50% 0;
+}
 
 .motivation__item:nth-child(even) {
   background-color: var(--color-dark-alt);
@@ -767,6 +801,147 @@ svg * {
 @media (width <= 768px) {
   .training-types__title {
     font-size: 14px;
+  }
+}
+
+.title-big {
+  font-size: clamp(20px, 3.12vw, 60px);
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.join-us__video-wrapper {
+  position: relative;
+  padding: 150px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/join-us-video-wrapper-img.jpg") center/cover no-repeat var(--color-dark-alt);
+}
+@media (width <= 768px) {
+  .join-us__video-wrapper {
+    padding: 70px 30px;
+  }
+}
+.join-us__video {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--color-light-gray);
+}
+.join-us-video-play-button {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 200px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: var(--border);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 20px;
+  transition: opacity var(--transition-duration), visibility var(--transition-duration);
+}
+.join-us-video-play-button::after {
+  content: "";
+  width: 15%;
+  aspect-ratio: 1;
+  background: url("../icons/button-arrow.svg") 100%/contain no-repeat;
+}
+@media (any-hover: hover) {
+  .join-us-video-play-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+@media (any-hover: none) {
+  .join-us-video-play-button:active {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+@media (width <= 768px) {
+  .join-us-video-play-button {
+    width: 100px;
+    font-size: 14px;
+  }
+}
+.join-us-video-play-button.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.join-us__body {
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: clamp(30px, 5.2vw, 100px);
+}
+@media (width <= 1280px) {
+  .join-us__body {
+    padding-bottom: 80px;
+  }
+}
+@media (width <= 768px) {
+  .join-us__body {
+    padding-bottom: 50px;
+  }
+}
+.join-us__title {
+  margin-top: -0.42em;
+  position: relative;
+  font-size: clamp(55px, 9.37vw, 180px);
+  line-height: 1;
+  color: var(--color-white);
+  text-align: center;
+}
+.join-us__title::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  aspect-ratio: 1;
+  margin-left: 0.15em;
+  background: url("../images/join-us-arrow-img.svg") center/cover no-repeat;
+}
+.join-us__form {
+  align-self: stretch;
+}
+.join-us__form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.join-us__form-header:not(:last-child) {
+  margin-bottom: 35px;
+}
+@media (width <= 768px) {
+  .join-us__form-header {
+    row-gap: 10px;
+  }
+}
+.join-us__form-subtitle {
+  max-width: 400px;
+  font-size: clamp(14px, 1.04vw, 20px);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-white);
+}
+.join-us__form-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  align-self: stretch;
+}
+@media (width <= 1024px) {
+  .join-us__form-body {
+    flex-direction: column;
+    row-gap: 20px;
   }
 }
 
