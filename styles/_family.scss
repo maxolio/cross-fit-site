@@ -1,0 +1,54 @@
+@use "0-globalstyles" as *;
+
+.family {
+
+  background-color: var(--color-dark-alt);
+
+  &__header {
+    isolation: isolate;
+    padding-top: 130px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    text-align: center;
+
+    @include mobile {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__description {
+    text-transform: uppercase;
+    font-size: 20px;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__body {
+    max-width: 1920px;
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: start;
+    column-gap: 20px;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+  }
+
+  &__image {
+    scroll-snap-align: center;
+    object-fit: cover;
+    border-radius: 10px;
+
+    @include mobile {
+
+      height: 360px;
+    }
+  }
+}
