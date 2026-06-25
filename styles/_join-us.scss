@@ -1,6 +1,7 @@
 @use "0-globalstyles" as *;
 
 .join-us {
+  background-color: var(--color-dark-alt);
 
 
   &__video-wrapper {
@@ -31,17 +32,18 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    column-gap: 4px;
+    column-gap: 5px;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     width: 200px;
     aspect-ratio: 1;
-    background-color: transparent;
     background-color: rgba(0, 0, 0, 0.3);
     border: var(--border);
     border-radius: 50%;
-    color: var(--color-white);
+    color: var(--color-yelow);
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 20px;
     transition: opacity var(--transition-duration), visibility var(--transition-duration);
 
@@ -49,7 +51,7 @@
       content: '';
       width: 15%;
       aspect-ratio: 1;
-      background: url("../icons/button-arrow.svg") 100%/contain no-repeat;
+      background: url("../icons/play-icon.svg") 100%/contain no-repeat;
     }
 
     @include hover {
@@ -106,6 +108,7 @@
 
   &__form {
     align-self: stretch;
+    isolation: isolate;
 
     &-header {
       display: flex;

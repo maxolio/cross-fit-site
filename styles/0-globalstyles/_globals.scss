@@ -43,3 +43,15 @@ input,
 svg * {
   transition-duration: var(--transition-duration);
 }
+
+/*
+header {
+  display: none;
+}
+
+main {
+  section:not(:last-child) {
+    display: none;
+  }
+}
+*/

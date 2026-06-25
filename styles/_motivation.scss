@@ -30,6 +30,7 @@
     }
 
     &-body {
+      isolation: isolate;
       padding-left: 35px;
 
       @include mobile {
