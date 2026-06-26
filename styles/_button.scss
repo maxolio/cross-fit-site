@@ -30,6 +30,10 @@
     border: var(--border);
     color: var(--color-white);
 
+    @include mobile {
+      height: 50px;
+    }
+
 
 
 

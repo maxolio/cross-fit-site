@@ -45,7 +45,7 @@ svg * {
 }
 
 
-/*
+
 
 header.header {
   display: none;
@@ -56,6 +56,27 @@ main {
     display: none;
   }
 }
-*/
 
 
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+ /* background: url("../icons/calculate-arrow.svg") right 20px center / 10px no-repeat;*/
+
+  &:invalid {
+    color: var(--color-light-gray);
+  }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

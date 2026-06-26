@@ -1,0 +1,190 @@
+@use "0-globalstyles" as *;
+
+.calculate {
+  background-color: var(--color-dark-alt);
+  padding-block: 150px;
+
+  @include laptop{
+    padding-block: 120px;
+  }
+
+  @include tablet {
+    padding-block: 100px;
+  }
+
+  @include mobile {
+    padding-block: 50px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+
+    @include tablet {
+      flex-direction: column-reverse;
+      row-gap: 150px;
+    }
+
+    @include mobile {
+      row-gap: 60px;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+    max-width: 627px;
+    isolation: isolate;
+  }
+
+  &__title {
+    margin-left: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+  }
+
+  &__description {
+    max-width: 385px;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    &-body {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px 30px;
+
+      &:not(:last-child) {
+        margin-bottom: 26px;
+      }
+
+      @include mobile-s {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    &-input {
+      &.wide {
+        grid-column: -1 / 1;
+      }
+    }
+
+    &-result {
+      height: 150px;
+      padding: 5px 10px;
+      border: 1px solid var(--color-dark-gray);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      @include mobile {
+        height: 200px;
+      }
+    }
+  }
+
+  &__table {
+    position: relative;
+    border-collapse: collapse;
+
+
+    & :is(td, th) {
+      padding-right: 30px;
+
+      @include mobile {
+        padding-right: 10px;
+      }
+
+      &:not(:first-child) {
+        padding-left: 30px;
+
+      }
+
+      &:not(:last-child) {
+        border-right: var(--border);
+      }
+    }
+
+    & tbody {
+      td {
+        border-top: var(--border);
+      }
+    }
+
+    th {
+      padding-block: 20px;
+      text-align: left;
+      text-transform: uppercase;
+      color: var(--color-white);
+
+      @include mobile {
+        padding-block: 10px;
+      }
+    }
+
+    td {
+      padding-block: 14px;
+
+      @include mobile {
+        padding-block: 10px;
+      }
+
+    }
+
+    tfoot {
+      td {
+        padding-top: 30px;
+        padding-bottom: 0;
+        color: var(--color-white);
+
+        @include mobile {
+          padding-top: 20px;
+        }
+
+        b {
+          font-weight: 700;
+        }
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 610px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: clamp(500px, 31.77vw, 610px);
+        aspect-ratio: 1;
+        background-color: var(--color-dark);
+        border-radius: 50%;
+
+
+      }
+
+      @include mobile {
+        background-color: var(--color-dark);
+        padding-block: 10px;
+        border-radius: 10px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+  }
+}
