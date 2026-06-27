@@ -44,9 +44,21 @@ svg * {
   transition-duration: var(--transition-duration);
 }
 
+a {
+  color: var(--color-white);
+}
 
+/*
+svg *[fill] {
+  fill: currentColor;
+}
+svg *[stroke] {
+  stroke: currentColor;
+}
+закомиттил тк уже есть в нормалайз, но оставил на будущее
+*/
 
-
+/*
 header.header {
   display: none;
 }
@@ -56,6 +68,8 @@ main {
     display: none;
   }
 }
+*/
+
 
 
 

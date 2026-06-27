@@ -23,6 +23,8 @@
     width: 100%;
     max-width: 960px;
     height: auto;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
     border-radius: 10px;
     border: 1px solid var(--color-light-gray);
   }
@@ -39,13 +41,16 @@
     width: 200px;
     aspect-ratio: 1;
     background-color: rgba(0, 0, 0, 0.3);
-    border: var(--border);
+    border: 1px solid var(--color-yelow);
     border-radius: 50%;
     color: var(--color-yelow);
     text-transform: uppercase;
     font-weight: 700;
     font-size: 20px;
-    transition: opacity var(--transition-duration), visibility var(--transition-duration);
+    transition: opacity var(--transition-duration),
+    visibility var(--transition-duration),
+    background-color var(--transition-duration);
+
 
     &::after {
       content: '';

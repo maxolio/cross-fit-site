@@ -62,7 +62,7 @@ class BMRCalculator {
     const activity = parseFloat(this.formElement.elements.activity.value)
 
     if (!height || !weight || !age || !gender || !activity || height <= 0 || weight <= 0 || age <= 0) {
-      this.resultElement.innerHTML = `<span style="color: #e53e3e; font-weight: 700;">Пожалуйста, заполните все поля корректно.</span>`
+      this.resultElement.innerHTML = `<b>Пожалуйста, заполните все поля корректно.</b>`
       return
     }
 
@@ -83,17 +83,17 @@ class BMRCalculator {
     const bmi = (weight / (heightInMeters ** 2)).toFixed(1)
     const bmiData = this.getBMICategory(parseFloat(bmi))
 
-    // 4. Вывод профессионального детального результата
+    // 4. Чистый вывод результатов (только абзацы и жирность)
     this.resultElement.innerHTML = `
-      <p style="margin-bottom: 12px; font-size: 18px;">
-        🍏 Ваша суточная норма калорий: <strong style="color: var(--color-white); border-bottom: 2px solid var(--color-yelow); font-size: 22px;">${dailyCalories} ккал</strong>
+      <p>
+        🍏 Ваша суточная норма калорий: <strong>${dailyCalories} ккал</strong>
       </p>
-      <p style="margin-bottom: 20px; font-size: 16px;">
-        📊 Индекс массы тела (BMI): <strong style="color: ${bmiData.color}; font-size: 18px;">${bmi}</strong> — <span style="font-weight: 700;">${bmiData.text}</span>
+      <p>
+        📊 Индекс массы тела (BMI): <strong>${bmi}</strong> — <b>${bmiData.text}</b>
       </p>
-      <div style="border-top: 1px solid var(--color-dark-gray); padding-top: 15px;">
-        <span style="font-weight: 700; color: var(--color-white); text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">💡 Персональные рекомендации:</span>
-        <p style="font-size: 14px; color: var(--color-light-gray); line-height: 1.6; margin: 0;">
+      <div>
+        <b>💡 Персональные рекомендации:</b>
+        <p>
           ${bmiData.tip}
         </p>
       </div>

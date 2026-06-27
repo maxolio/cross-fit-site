@@ -34,9 +34,6 @@
       height: 50px;
     }
 
-
-
-
     &::after {
       position: absolute;
       content: '';
@@ -45,7 +42,7 @@
       border: var(--border);
       border-radius: 50%;
       right: 0;
-      background: url("../icons/button-arrow.svg") center/70%  no-repeat;
+      background: url("../icons/button-arrow.svg") center/60%  no-repeat;
       transition-duration: var(--transition-duration);
 
     }

@@ -20,7 +20,7 @@ class VideoPlayer {
   onPlayButtonClick = () => {
     this.playButtonElement.classList.add(this.stateClasses.isHidden)
     this.videoElement.play()
-    this.videoElement.controls = true
+
   }
 
   bindEvents() {

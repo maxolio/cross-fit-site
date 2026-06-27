@@ -16,7 +16,7 @@
 
     @include mobile {
       padding-top: 80px;
-      padding-bottom: 40px;
+      padding-bottom: 20px;
     }
   }
 
@@ -39,6 +39,11 @@
     width: 100%;
     scroll-snap-type: x mandatory;
     overflow-x: auto;
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior-x: contain;
   }
 
   &__image {
